@@ -46,7 +46,6 @@ the operation. So, every HTTP request has a verb or a method that determines its
 * Step 1: We should send an HTTP GET request to the address: GET /api/customers
 Note, the full name 'customers' here. This indicates a list of customers.
 * Step 2: After sending an HTTP GET request to this endPoint, our service sends us something like-
-
        REQUEST        |             RESPONSE
   -----------------   |   -----------------------------
                       |     [
@@ -54,11 +53,9 @@ Note, the full name 'customers' here. This indicates a list of customers.
                       |         { id: 2, name: '' },
                       |         ...
                       |     ]
-
 So, we have an array of customers objects.
 * Step 3: If we want a single customer, we should enter the ID of the customer in the address.
 Then our server would respond with a customer object like this.
-
        REQUEST          |         RESPONSE
   -----------------     |   -----------------------
                         |
@@ -77,7 +74,6 @@ updated properties.
 'PUT /api/customers/1' 
 * Step 2: We send it to the server. The server updates the customer with the given id 
 * according to these values. 
-
        REQUEST          |         RESPONSE
   -----------------     |   -----------------------
                         |
@@ -85,7 +81,6 @@ updated properties.
                         |
   { name: '' }          |
                         |
-
 */
 
 // Deleting A customer- using DELETE
@@ -93,7 +88,6 @@ updated properties.
 * Step 1: To delete a customer, we should send an HTTP DELETE request to this endPoint. 
 * However, we do not need to include the 'CUSTOMER' object in the body of the request
 * because all we need to delete a customer is an id.
-
        REQUEST             |         RESPONSE
   -----------------        |   -----------------------
                            |
@@ -101,8 +95,6 @@ updated properties.
                            |
                            |
                            |
-
-
 */
 
 // Create a customer- using POST
@@ -113,7 +105,6 @@ updated properties.
 * customer to this collection. So, we should include the customer object in the body of the
 * request. The server gets the object and creates the 'CUSTOMER' file.
   
-
        REQUEST             |         RESPONSE
   -----------------        |   -----------------------
                            |
@@ -121,7 +112,6 @@ updated properties.
                            |
   { name: '' }             |
                            |
-
 */
 
 /* This is the RESTful convention where we expose our resources such as 'CUSTOMERS' using a simple
@@ -192,88 +182,37 @@ app.post();
 app.put();
 app.delete();
 // All these methods correspond to HTTP verbs or HTTP methods.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+* Using GET()- implement couple of endPoints that respond to an HTTP GET() request. 
+*/
+
+/* app.get('/', function(req, res) {
+});
+*/
+
+// Arrow function: Alternative of the above code.
+app.get('/', (req, res) => {
+// codeblock goes here
+/* The request object has many useful properties that gives us information about the 
+incoming request. For more details, visit express.js documentation -> API reference
+*/
+  // Here, if we get an HTTP GET request to the root of our website, we will respond
+  // with a Hello World message
+
+  res.send('Hello World');
+});
+// The callback function is also called 'Route Handler'
+
+// The method takes in two arguments. 
+// a) The url; b) A callback function - this function will be called when we have a HTTP get request to this endPoint or the URL.
+// The callback function also has two arguments.
+// a) A Request; b) A Response
+// '/' represents the root of the website. 
+
+// After all this, we need to listen on a given port.
+
+// We give a port number like 3000, and optionally we can pass a function that will be called when 
+// the application starts listening on the given port.
+app.listen(3000, () => {
+  console.log("Listening on port 3000...");
+});
