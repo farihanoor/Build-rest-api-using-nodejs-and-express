@@ -249,6 +249,66 @@ app.listen(3000, () => {
 
 // nodemon automatically restarts the process if there are any changes to the file.
 
+/*******************************************/
+//**** Lesson 4: Environment Variables ****//
+/*******************************************/
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+app.get('/api/courses', (req, res) => {
+  res.send([1, 2, 3]);
+});
+
+app.get('/fariha', (req, res) => {
+  res.send('Welcome, Fariha');
+}); 
+
+// The problem here is that the value for the port is hard coded. In real world. the port is dynamically assigned.
+// The way to fix this is to use an environment variable. In hosting environments for node applications, we
+// have this environment variable called //*'PORT'
+
+// * Environment Variable -> An environment variable is basically that is part of the environment in which a process runs.
+// * Its value is set outside this application.
+// In this application, we need to read the value of this port environment variable. The way to do this by using the 
+// process object.
+
+//* PORT
+const port = process.env.PORT || 3000;
+// process is a global object
+// The object has a property called 'env'.
+// After that we add the name of the environment variable 'PORT'
+// If 3000 available or assign a dynamic port
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
+});
+// In the string, we replace '' with `` (back ticks)
+// Then to display the dynamic value, ${variable}
+
+// Creating an environment variable
+// Back in the cmd, stop the process using ctrl+c
+// type cmd (on windows) => set PORT=4000 
+// This is the correct way ot assign port. Assign a value, if it's not available then use an arbitrary number.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
