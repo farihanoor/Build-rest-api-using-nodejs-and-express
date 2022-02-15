@@ -229,3 +229,39 @@ app.get('/api/courses', (req, res) => {
 app.listen(3000, () => {
   console.log("Listening on port 3000...");
 });
+
+/*******************************************/
+//*********** Lesson 3: Nodemon ***********//
+/*******************************************/
+
+// Every time we mane any changes in the code, we have to go back to the terminal(cmd) and press ctrl+C.
+// There is a way to automate the process. 
+// Install a node package called 'Nodemon' short for Node Monitor.
+
+
+// ** Installing Nodemon**
+
+// cmd -> npm i -g nodemon
+
+// Reads as npm install globally package_name
+
+// cmd type => nodemon index.js
+
+// nodemon automatically restarts the process if there are any changes to the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
