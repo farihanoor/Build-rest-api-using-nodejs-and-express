@@ -216,3 +216,16 @@ incoming request. For more details, visit express.js documentation -> API refere
 app.listen(3000, () => {
   console.log("Listening on port 3000...");
 });
+
+// Defining another route
+app.get('/api/courses', (req, res) => {
+  res.send('[1, 2, 3]');
+});
+// Run in the terminal
+// You have to stop the process and run it again
+// Cmd type ctrl c
+// node index.js
+
+app.listen(3000, () => {
+  console.log("Listening on port 3000...");
+});
